@@ -3,10 +3,10 @@ import dotenv from "dotenv";
 import cors from "cors";
 import authRoutes from "./routes/auth.routes.js";
 import employeeRoutes from "./routes/employees.routes.js";
-import { FRONTEND_URL } from "./config.js";
 
 const app = express();
 dotenv.config();
+const FRONTEND_URL = process.env.FRONTEND_URL || 3000;
 app.use(
     cors({
       credentials: true,
